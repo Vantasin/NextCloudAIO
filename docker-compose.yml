@@ -1,0 +1,32 @@
+---
+services:
+  nextcloud-aio-mastercontainer:
+    image: nextcloud/all-in-one:latest
+    init: true
+    restart: always
+    container_name: nextcloud-aio-mastercontainer
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - ${NEXTCLOUD_PORT}:8080  # AIO management port
+    environment:
+      AIO_DISABLE_BACKUP_SECTION: false
+      APACHE_PORT: 11000
+      APACHE_IP_BINDING: ${APACHE_IP_BINDING}
+      BORG_RETENTION_POLICY: --keep-within=7d --keep-weekly=4 --keep-monthly=6
+      COLLABORA_SECCOMP_DISABLED: false
+      NEXTCLOUD_DATADIR: ${NEXTCLOUD_MOUNT}/ncdata
+      NEXTCLOUD_MOUNT: ${NEXTCLOUD_MOUNT}
+      NEXTCLOUD_UPLOAD_LIMIT: 10G
+      NEXTCLOUD_MAX_TIME: 3600
+      NEXTCLOUD_MEMORY_LIMIT: 512M
+      NEXTCLOUD_STARTUP_APPS: deck twofactor_totp tasks calendar contacts notes
+      NEXTCLOUD_ADDITIONAL_APKS: imagemagick
+      NEXTCLOUD_ADDITIONAL_PHP_EXTENSIONS: imagick
+      NEXTCLOUD_KEEP_DISABLED_APPS: false
+      WATCHTOWER_DOCKER_SOCKET_PATH: /var/run/docker.sock
+
+volumes:
+  nextcloud_aio_mastercontainer:
+    name: nextcloud_aio_mastercontainer

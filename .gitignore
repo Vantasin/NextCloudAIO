@@ -1,0 +1,29 @@
+# Ignore files with secrets
+.env
+
+# Ignore backup files
+*~
+*.bak
+*.swp
+
+# Ignore local Docker volumes (if mapped inside repo)
+data/
+volumes/
+logs/
+
+# Ignore editor/IDE metadata
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore logs
+*.log
+
+# Ignore compiled Python files (if any scripts are added later)
+__pycache__/
+*.pyc
+
+# Ignore Developer Tools
+git_push.py
+summarize_codebase.sh
+codebase_summary.txt
