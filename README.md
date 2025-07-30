@@ -78,39 +78,27 @@ tank/
    sudo chmod 600 .env
    ```
 
-   > **Note:** Be sure to update the `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD` and if necessary the `PAPERLESS_DATA_VOLUME` & `PAPERLESS_PORT`.
-   
-4. **Configure webserver environment variables**
-
-   Copy and modify the `webserver.env` file:
-
-   ```bash
-   sudo cp webserver.env.example webserver.env
-   sudo nano webserver.env
-   sudo chmod 600 webserver.env
-   ```
-
    > **Note:** Be sure to update the `APACHE_IP_BINDING` and if necessary the `NEXTCLOUD_PORT` & `NEXTCLOUD_MOUNT`.
 
    > **Tip:** Set the `APACHE_IP_BINDING` to your host's `Tailscale` IP address.
    
    > **Optional:** You can create a Nextloud URL eg. `nextcloud.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
 
-   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `http://localhost:11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `http://localhost:8081` to setup Nextcloud AIO.
+	   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `http://localhost:11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `http://localhost:8081` to setup Nextcloud AIO.
 
-   > **Internal Proxy Host:**
-   >  - **Domain Name:** `https://nextcloud.example.com`
-   >  - **Scheme:** http
-   >  - **Forward Hostname/IP:** 100.100.100.100
-   >  - **Forward Port:** 11000
+	   > **Internal Proxy Host:**
+	   >  - **Domain Name:** `https://nextcloud.example.com`
+	   >  - **Scheme:** http
+	   >  - **Forward Hostname/IP:** 100.100.100.100
+	   >  - **Forward Port:** 11000
 
-   > **External Proxy Host:**
-   >  - **Domain Name:** `https://setup.example.com`
-   >  - **Scheme:** https
-   >  - **Forward Hostname/IP:** 100.100.100.100
-   >  - **Forward Port:** 8081
+	   > **External Proxy Host:**
+	   >  - **Domain Name:** `https://setup.example.com`
+	   >  - **Scheme:** https
+	   >  - **Forward Hostname/IP:** 100.100.100.100
+	   >  - **Forward Port:** 8081
 
-5. **Start nextcloud**
+4. **Start nextcloud**
 
    ```bash
    sudo docker compose up -d
