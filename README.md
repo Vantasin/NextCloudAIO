@@ -84,19 +84,19 @@ tank/
    
    > **Optional:** You can create a Nextloud URL eg. `nextcloud.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
 
-	   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `http://localhost:11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `http://localhost:8081` to setup Nextcloud AIO.
+   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `http://localhost:11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `http://localhost:8081` to setup Nextcloud AIO.
 
-	   > **Internal Proxy Host:**
-	   >  - **Domain Name:** `https://nextcloud.example.com`
-	   >  - **Scheme:** http
-	   >  - **Forward Hostname/IP:** 100.100.100.100
-	   >  - **Forward Port:** 11000
+   > **Internal Proxy Host:**
+   >  - **Domain Name:** `https://nextcloud.example.com`
+   >  - **Scheme:** http
+   >  - **Forward Hostname/IP:** 100.100.100.100
+   >  - **Forward Port:** 11000
 
-	   > **External Proxy Host:**
-	   >  - **Domain Name:** `https://setup.example.com`
-	   >  - **Scheme:** https
-	   >  - **Forward Hostname/IP:** 100.100.100.100
-	   >  - **Forward Port:** 8081
+   > **External Proxy Host:**
+   >  - **Domain Name:** `https://setup.example.com`
+   >  - **Scheme:** https
+   >  - **Forward Hostname/IP:** 100.100.100.100
+   >  - **Forward Port:** 8081
 
 4. **Start nextcloud**
 
