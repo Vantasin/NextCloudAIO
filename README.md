@@ -89,14 +89,14 @@ tank/
    > **Internal Proxy Host:**
    >  - **Domain Name:** `https://nextcloud.example.com`
    >  - **Scheme:** http
-   >  - **Forward Hostname/IP:** 100.100.100.100
+   >  - **Forward Hostname/IP:** `nextcloud-aio-mastercontainer`
    >  - **Forward Port:** 11000
    >
    > **External Proxy Host:**
    >  - **Domain Name:** `https://setup.example.com`
    >  - **Scheme:** https
-   >  - **Forward Hostname/IP:** 100.100.100.100
-   >  - **Forward Port:** 8081
+   >  - **Forward Hostname/IP:** `nextcloud-aio-mastercontainer`
+   >  - **Forward Port:** 8080
 
 4. **Start nextcloud**
 
@@ -110,13 +110,13 @@ tank/
 
 Once deployed, access **Nextcloud** using:
 
-- **Initialize Nextcloud AIO:** Navigate to the external proxy: `https://setup.example.com` or `http://localhost:8081`
+- **Initialize Nextcloud AIO:** Navigate to the external proxy: `https://setup.example.com`.
 
 	- **IMPORTANT:** Take a screenshot of the All-In-One setup passphrase!
 
 	- Use the passphrase to login.
 
-	- Use the internal proxy: `https://nextcloud.example.com` or `http://localhost:11000` to register your domain with Nextcloud AIO and for access to the Nextcloud GUI.
+	- Use the internal proxy: `https://nextcloud.example.com` to register your domain with Nextcloud AIO and for access to the Nextcloud GUI.
 
 	- Use the initial Nextcloud username & passowrd provided during setup to login for the first time.
 

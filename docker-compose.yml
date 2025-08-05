@@ -8,8 +8,8 @@ services:
     volumes:
       - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    ports:
-      - ${NEXTCLOUD_PORT}:8080  # AIO management port
+    networks:
+          - npm_proxy
     environment:
       AIO_DISABLE_BACKUP_SECTION: false
       APACHE_PORT: 11000
@@ -30,3 +30,7 @@ services:
 volumes:
   nextcloud_aio_mastercontainer:
     name: nextcloud_aio_mastercontainer
+
+networks:
+  npm_proxy:
+    external: true
