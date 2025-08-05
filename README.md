@@ -70,7 +70,7 @@ tank/
 
 3. **Configure environment variables**
 
-   Copy and modify the `.env` file:
+   Copy and modify the `.env` file as necessary:
 
    ```bash
    sudo cp env.example .env
@@ -78,17 +78,17 @@ tank/
    sudo chmod 600 .env
    ```
 
-   > **Notes:** You can create a Nextloud URL eg. `nextcloud.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
+   > **Notes:** You must create two Nextloud URLs eg. `nextcloud.example.com` & `setup.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
 
-   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `port 11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `port 8080` to setup Nextcloud AIO.
+   > **Tip:** Nextcloud AIO uses two ports/proxies, one is `port 11000` for access to the Nextcloud GUI, the other is `port 8080` to setup Nextcloud AIO.
    >
-   > **Internal Proxy Host:**
+   > **GUI Proxy Host:**
    >  - **Domain Name:** `https://nextcloud.example.com`
    >  - **Scheme:** http
-   >  - **Forward Hostname/IP:** `nextcloud-aio-mastercontainer`
+   >  - **Forward Hostname/IP:** `nextcloud-aio-apache`
    >  - **Forward Port:** 11000
    >
-   > **External Proxy Host:**
+   > **Setup Proxy Host:**
    >  - **Domain Name:** `https://setup.example.com`
    >  - **Scheme:** https
    >  - **Forward Hostname/IP:** `nextcloud-aio-mastercontainer`
