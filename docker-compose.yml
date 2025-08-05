@@ -13,7 +13,7 @@ services:
     environment:
       AIO_DISABLE_BACKUP_SECTION: false
       APACHE_PORT: 11000
-      APACHE_IP_BINDING: 127.0.0.1
+      APACHE_IP_BINDING: 0.0.0.0
       BORG_RETENTION_POLICY: --keep-within=7d --keep-weekly=4 --keep-monthly=6
       COLLABORA_SECCOMP_DISABLED: false
       NEXTCLOUD_DATADIR: ${NEXTCLOUD_MOUNT}/ncdata
