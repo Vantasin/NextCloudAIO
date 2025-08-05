@@ -78,13 +78,9 @@ tank/
    sudo chmod 600 .env
    ```
 
-   > **Note:** Be sure to update the `APACHE_IP_BINDING` and if necessary the `NEXTCLOUD_PORT` & `NEXTCLOUD_MOUNT`.
+   > **Notes:** You can create a Nextloud URL eg. `nextcloud.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
 
-   > **Tip:** Set the `APACHE_IP_BINDING` to your host's `Tailscale` IP address.
-   
-   > **Optional:** You can create a Nextloud URL eg. `nextcloud.example.com` using [Nginx Proxy Manager](https://github.com/Vantasin/Nginx-Proxy-Manager.git) as a reverse proxy for HTTPS certificates via Let's Encrypt.
-
-   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `http://localhost:11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `http://localhost:8081` to setup Nextcloud AIO.
+   > **Tip:** Nextcloud AIO uses two ports/proxies, one is for the internal reverse proxy `port 11000` for access to the Nextcloud GUI, the other is for the external reverse proxy `port 8080` to setup Nextcloud AIO.
    >
    > **Internal Proxy Host:**
    >  - **Domain Name:** `https://nextcloud.example.com`
